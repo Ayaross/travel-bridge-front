@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server ./dist/travel-bridge-front -p 3000",
-    "build": "ng build",
+    "start": "node --max-old-space-size=1024 ./node_modules/@angular/cli/bin/ng serve",
+    "build": "node --max-old-space-size=1024 ./node_modules/@angular/cli/bin/ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
