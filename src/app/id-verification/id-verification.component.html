@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="header">
+    <h2>Document Verification</h2>
+  </div>
+
+  <!-- Étape : Capture Front -->
+  <div *ngIf="currentStep === 'front'" class="step-container">
+    <h3>Step 1: Capture Front of the Document</h3>
+    <div class="webcam-wrapper" (dblclick)="triggerSnapshot()">
+      <webcam
+        [trigger]="triggerObservable"
+        [height]="350"
+        [width]="380"
+        (imageCapture)="handleImage($event)"
+        (initError)="handleInitError($event)"
+      ></webcam>
+    </div>
+  </div>
+
+  <!-- Étape : Capture Back -->
+  <div *ngIf="currentStep === 'back'" class="step-container">
+    <h3>Step 2: Capture Back of the Document</h3>
+    <div class="webcam-wrapper" (dblclick)="triggerSnapshot()">
+      <webcam
+        [trigger]="triggerObservable"
+        [height]="350"
+        [width]="380"
+        (imageCapture)="handleImage($event)"
+        (initError)="handleInitError($event)"
+      ></webcam>
+    </div>
+  </div>
+
+  <!-- Étape : Validation -->
+  <div *ngIf="currentStep === 'done'" class="step-container">
+    <h3>Review and Validate</h3>
+    <div class="review-section">
+      <div class="image-container">
+        <div>
+          <h4>Document Front:</h4>
+          <img *ngIf="webcamImage" [src]="webcamImage.imageAsDataUrl" alt="Front Image" class="image-preview" />
+        </div>
+        <div>
+          <h4>Document Back:</h4>
+          <img *ngIf="backImage" [src]="backImage.imageAsDataUrl" alt="Back Image" class="image-preview" />
+        </div>
+      </div>
+      <button class="button-success" (click)="sendToBackend()" [disabled]="isLoading">
+        Validate
+      </button>
+      <div *ngIf="isLoading" class="loader-container">
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Afficher la réponse -->
+  <div *ngIf="response" class="response-container">
+    <div
+      [class]="response.decision === 'accept' ? 'response-card success' : 'response-card error'"
+    >
+      <h3 *ngIf="response.decision === 'accept'">✅ Approved</h3>
+      <h3 *ngIf="response.decision !== 'accept'">❌ Rejected</h3>
+  
+      <p>Decision: <strong>{{ response.decision }}</strong></p>
+  
+      <div class="warnings">
+        <h4>Warnings:</h4>
+        <ul>
+          <li *ngFor="let warning of response.warning">
+            <strong>{{ warning.code }}</strong>: {{ warning.description }}
+            <br />
+            Severity: <strong>{{ warning.severity }}</strong> | Confidence: <strong>{{ warning.confidence }}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+</div>

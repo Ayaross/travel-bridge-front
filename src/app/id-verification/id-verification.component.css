@@ -1,0 +1,234 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .step-container {
+    margin: 20px 0;
+  }
+  
+  .webcam-wrapper {
+    position: relative;
+    display: inline-block;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+    width: fit-content;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .webcam-wrapper:hover {
+    border-color: #007bff;
+    background: #e6f7ff;
+  }
+  
+  .overlay-button {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #007bff;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .overlay-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .image-preview {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button-success {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .button-success:hover {
+    background-color: #218838;
+  }
+  
+  .loader-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .image-preview {
+    width: 100%;
+    max-width: 300px; /* Réduire la largeur pour garder les deux images côte à côte */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .loader-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #007bff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  
+  .response-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .response-card {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .response-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+  }
+  
+  .response-card.success {
+    background-color: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+  }
+  
+  .response-card.error {
+    background-color: #f8d7da;
+    border: 2px solid #dc3545;
+    color: #721c24;
+  }
+  
+  .response-card ul {
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .response-card li {
+    margin: 5px 0;
+  }
+  
+  .response-card li strong {
+    color: #333;
+  }
+  
+  .warnings h4 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .webcam-wrapper {
+    position: relative;
+    display: inline-block;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+    width: fit-content;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .webcam-wrapper:hover {
+    border-color: #007bff;
+    background: #e6f7ff;
+  }
+  
+  .webcam-wrapper:active {
+    border-color: #28a745;
+    background: #d4edda;
+  }
+  
+  @media (hover: none) and (pointer: coarse) {
+    .webcam-wrapper {
+      border-color: #ffc107;
+      background: #fff3cd;
+    }
+  
+    .webcam-wrapper:active {
+      border-color: #ff5722;
+      background: #ffe0e0;
+    }
+  }
+  
